@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="about">
+    <h2 class="title">I break stuff and build software.</h2>
+    <p>I'm currently a security developer at <a
+        href="https://coreos.com">CoreOS</a>. In the past I've worked for <a
+        href="http://www.matasano.com/">Matasano Security</a> and <a
+        href="http://www.gtri.gatech.edu/">GTRI</a> doing security research and
+      penetration testing. I've consulted on cryptographic design, reverse
+      engineering, and scalable natural language processing. I founded a
+      company a couple of years ago as part of YCombinator's S2013 batch and am
+      always happy to talk to applicants.</p>
+
+    <p>I live in San Francisco, CA but travel frequently.</p>
+</div>
+<div id="contact">
+    <h2>Contact me!</h2>
+    <p>I would love to talk to you about crypto, tech, startups, life in the Bay Area, cooking, art projects, or anything else interesting. Don't hesitate to ask!</p>
+    <p>Got secrets? I have a <a href={{ url_for('static', filename='pubkey2015.asc') }}>GPG key</a> which can be verified at <a href="https://keybase.io/gtank">keybase.io</a>.</p>
+    <p>Elsewhere on the internet:</p>
+    <p>
+      <ul>
+          {% for info in contact|sort|reverse %}
+          <li><a href={{contact[info]|safe}}>{{info}}</a></li>
+          {% endfor %}
+      </ul>
+    </p>
+</div>
+{% endblock content %}

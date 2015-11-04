@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>George Tankersley</title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style-compat.css') }}">
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <div id="content">
+                {% block content %}{% endblock content %}
+            </div>
+        </div>
+    </body>
+</html>
